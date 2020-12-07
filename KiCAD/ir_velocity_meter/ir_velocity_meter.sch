@@ -1,0 +1,203 @@
+EESchema Schematic File Version 4
+EELAYER 30 0
+EELAYER END
+$Descr User 5197 4331
+encoding utf-8
+Sheet 1 1
+Title "IR Angular Velocity Meter"
+Date "2020-04-20"
+Rev "1"
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L Comparator:LM393 U2
+U 3 1 5E9B0F28
+P 3350 1500
+F 0 "U2" H 2950 1750 50  0001 L CNN
+F 1 "LM393" H 2950 1850 50  0001 L CNN
+F 2 "" H 3350 1500 50  0001 C CNN
+F 3 "http://www.ti.com/lit/ds/symlink/lm393-n.pdf" H 3350 1500 50  0001 C CNN
+	3    3350 1500
+	1    0    0    -1  
+$EndComp
+NoConn ~ 2650 1500
+$Comp
+L power:+3V3 #PWR01
+U 1 1 5E9B20D4
+P 2650 850
+F 0 "#PWR01" H 2650 700 50  0001 C CNN
+F 1 "+3V3" H 2665 1023 50  0000 C CNN
+F 2 "" H 2650 850 50  0001 C CNN
+F 3 "" H 2650 850 50  0001 C CNN
+	1    2650 850 
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR02
+U 1 1 5E9B351F
+P 2650 2200
+F 0 "#PWR02" H 2650 1950 50  0001 C CNN
+F 1 "GND" H 2655 2027 50  0000 C CNN
+F 2 "" H 2650 2200 50  0001 C CNN
+F 3 "" H 2650 2200 50  0001 C CNN
+	1    2650 2200
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R2
+U 1 1 5E9D3D60
+P 1850 1200
+F 0 "R2" H 1920 1246 50  0000 L CNN
+F 1 "10K" H 1920 1155 50  0000 L CNN
+F 2 "" V 1780 1200 50  0001 C CNN
+F 3 "~" H 1850 1200 50  0001 C CNN
+	1    1850 1200
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R_POT RV1
+U 1 1 5E9D5840
+P 2650 1600
+F 0 "RV1" H 2581 1646 50  0000 R CNN
+F 1 "R_POT" H 2581 1555 50  0000 R CNN
+F 2 "" H 2650 1600 50  0001 C CNN
+F 3 "~" H 2650 1600 50  0001 C CNN
+	1    2650 1600
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C C1
+U 1 1 5E9D831B
+P 2850 1900
+F 0 "C1" H 2965 1946 50  0000 L CNN
+F 1 "100nF" H 2965 1855 50  0000 L CNN
+F 2 "" H 2888 1750 50  0001 C CNN
+F 3 "~" H 2850 1900 50  0001 C CNN
+	1    2850 1900
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2850 1750 2850 1600
+Wire Wire Line
+	2850 1600 2800 1600
+Connection ~ 2850 1600
+Wire Wire Line
+	2650 1750 2650 2200
+Wire Wire Line
+	2850 2200 2850 2050
+Wire Wire Line
+	2650 850  2650 1450
+$Comp
+L sensors:TCRT5000 U1
+U 2 1 5E9DC09A
+P 1200 1600
+F 0 "U1" H 1258 1646 50  0000 L CNN
+F 1 "TCRT5000" H 1258 1555 50  0000 L CNN
+F 2 "" H 970 1850 50  0001 C CNN
+F 3 "" H 970 1850 50  0001 C CNN
+	2    1200 1600
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1850 1350 1850 1400
+Connection ~ 1850 1400
+Wire Wire Line
+	1850 1800 1850 2200
+Wire Wire Line
+	1850 850  1850 1050
+Wire Wire Line
+	1850 1400 3050 1400
+Wire Wire Line
+	2850 1600 3050 1600
+Wire Wire Line
+	1850 850  2650 850 
+Connection ~ 2650 850 
+Wire Wire Line
+	1850 2200 2650 2200
+Connection ~ 2650 2200
+Wire Wire Line
+	2850 2200 2650 2200
+Wire Wire Line
+	3250 1800 3250 2200
+Wire Wire Line
+	3250 2200 2850 2200
+Connection ~ 2850 2200
+Wire Wire Line
+	2650 850  3250 850 
+Wire Wire Line
+	3250 850  3250 1200
+Wire Wire Line
+	3650 1500 3800 1500
+Text GLabel 3900 1500 2    50   Output ~ 0
+OUT
+$Comp
+L Device:R R3
+U 1 1 5E9E3D20
+P 3800 1200
+F 0 "R3" H 3870 1246 50  0000 L CNN
+F 1 "10K" H 3870 1155 50  0000 L CNN
+F 2 "" V 3730 1200 50  0001 C CNN
+F 3 "~" H 3800 1200 50  0001 C CNN
+	1    3800 1200
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3250 850  3800 850 
+Wire Wire Line
+	3800 850  3800 1050
+Connection ~ 3250 850 
+Wire Wire Line
+	3800 1350 3800 1500
+Wire Wire Line
+	3800 1500 3900 1500
+Connection ~ 3800 1500
+$Comp
+L Comparator:LM393 U2
+U 1 1 5E9AB0B8
+P 3350 1500
+F 0 "U2" H 3400 1300 50  0000 C CNN
+F 1 "LM393" H 3450 1200 50  0000 C CNN
+F 2 "" H 3350 1500 50  0001 C CNN
+F 3 "http://www.ti.com/lit/ds/symlink/lm393-n.pdf" H 3350 1500 50  0001 C CNN
+	1    3350 1500
+	1    0    0    1   
+$EndComp
+$Comp
+L sensors:TCRT5000 U1
+U 1 1 5E9F2901
+P 1850 1600
+F 0 "U1" H 1928 1646 50  0000 L CNN
+F 1 "TCRT5000" H 1928 1555 50  0000 L CNN
+F 2 "" H 1620 1850 50  0001 C CNN
+F 3 "" H 1620 1850 50  0001 C CNN
+	1    1850 1600
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R1
+U 1 1 5E9F4DBA
+P 1200 1200
+F 0 "R1" H 1270 1246 50  0000 L CNN
+F 1 "47R" H 1270 1155 50  0000 L CNN
+F 2 "" V 1130 1200 50  0001 C CNN
+F 3 "~" H 1200 1200 50  0001 C CNN
+	1    1200 1200
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1200 1050 1200 850 
+Wire Wire Line
+	1200 850  1850 850 
+Connection ~ 1850 850 
+Wire Wire Line
+	1200 1350 1200 1400
+Wire Wire Line
+	1200 1800 1200 2200
+Wire Wire Line
+	1200 2200 1850 2200
+Connection ~ 1850 2200
+$EndSCHEMATC
